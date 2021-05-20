@@ -5,14 +5,12 @@ package Bowling;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Arrays;
-
 @Slf4j
 public class App {
 
     public static void main(String[] args) {
         BowlingGame bowlingGame = new AmericanBowlingGame();
-        bowlingGame.start(Arrays.asList(args));
+        bowlingGame.start(args);
         bowlingGame.showScoresPerFrame();
         log.info("Total Game Score is: {}", bowlingGame.getTotalGameScore());
     }

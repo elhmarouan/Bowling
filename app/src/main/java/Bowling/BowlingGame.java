@@ -1,9 +1,7 @@
 package Bowling;
 
-import java.util.List;
-
 public interface BowlingGame {
-    void start(List<String> framesSequence);
+    void start(String[] framesSequence);
 
     int getTotalGameScore();
 

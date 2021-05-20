@@ -6,6 +6,7 @@ import Bowling.model.Roll;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -15,8 +16,8 @@ public class AmericanBowlingGame implements BowlingGame {
     private final List<Frame> frames = new ArrayList<>();
 
     @Override
-    public void start(List<String> framesSequence) {
-        log.info("Starting a new Ten-Pin Bowling Game with the following frames {}", framesSequence.toString());
+    public void start(String[] framesSequence) {
+        log.info("Starting a new Ten-Pin Bowling Game with the following frames {}", Arrays.toString(framesSequence));
         int frameNumber = 1;
         for (String frameString : framesSequence) {
             Frame frame = playFrame(frameString, frameNumber++);
@@ -92,8 +93,7 @@ public class AmericanBowlingGame implements BowlingGame {
             default -> {
                 if (Character.isDigit(rollChar)) {
                     return Roll.builder().pinsKnockedDown(Character.getNumericValue(rollChar)).build();
-                }
-                else throw new IllegalArgumentException(Constants.ERROR_INVALID_ROLL_CHARACTER);
+                } else throw new IllegalArgumentException(Constants.ERROR_INVALID_ROLL_CHARACTER);
             }
         }
     }
