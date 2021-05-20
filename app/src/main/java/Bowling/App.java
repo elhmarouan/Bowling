@@ -3,12 +3,17 @@
  */
 package Bowling;
 
+import lombok.extern.slf4j.Slf4j;
+
+import java.util.Arrays;
+
+@Slf4j
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        BowlingGame bowlingGame = new AmericanBowlingGame();
+        bowlingGame.start(Arrays.asList(args));
+        bowlingGame.showScoresPerFrame();
+        log.info("Total Game Score is: {}", bowlingGame.getTotalGameScore());
     }
 }

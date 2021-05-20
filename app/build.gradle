@@ -17,11 +17,15 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit test framework.
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+
     testImplementation 'junit:junit:4.13.1'
 
-    // This dependency is used by the application.
-    implementation 'com.google.guava:guava:30.0-jre'
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
 }
 
 application {
