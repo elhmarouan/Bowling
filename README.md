@@ -15,3 +15,20 @@ To execute the unit tests, run the following command:
 ```
 ./gradlew test
 ```
+
+## Test Cases
+```
+"9- 9- 9- 9- 9- 9- 9- 9- 9- 9-" returns a total score of 90
+```
+```
+"5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5" returns a total score of 150
+```
+```
+"X X X X X X X X X X X X" returns a total score of 300
+```
+```
+"51 32 X 9- 11 5- 33 44 1- 22" returns a total score of 65
+```
+```
+"-- -- -- -- -- -- -- -- -- --" returns a total score of 0
+```
